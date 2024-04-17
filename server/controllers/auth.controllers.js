@@ -28,3 +28,13 @@ export const register = async(req, res) => {
         res.status(500).json({error: err.message})
     }
 }
+
+/* LOGGING IN */
+export const login = async(req, res) => {
+    try{
+        const {email, password} = req.body;
+    }
+    catch(err){
+        res.status(500).json({error: err.message})
+    }
+}
