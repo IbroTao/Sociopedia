@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: true,
@@ -24,5 +24,21 @@ const userSchema = new mongoose.Schema({
         required: true,
         min: 5
     },
-    
-})
+    picturePath: {
+        type: String,
+        default: ""
+    },
+    friends: {
+        type: Array,
+        default: [],
+    },
+    location: String,
+    occupation: String,
+    viewedProfile: Number,
+    impressions: Number,
+}, {
+    timestamps: true
+});
+
+const User = mongoose.model("users", UserSchema);
+export default User;
