@@ -9,7 +9,11 @@ export const verifyToken = async(req, res, next) => {
 
         if(token.startsWith("Bearer ")) {
             token = token.slice(7, token.length).trimLeft()
-        }
+        };
+
+        const verifiedToken = jwt.verify(token. process.env.JWT_SECRET);
+        req.user = verifiedToken;
+        next()
 
     }
     catch(err){
