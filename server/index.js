@@ -11,7 +11,8 @@ import {fileURLToPath} from "url";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/users.routes.js";
 import postRoutes from "./routes/posts.routes.js";
-import {register} from "./controllers/auth.controllers.js"
+import {register} from "./controllers/auth.controllers.js";
+import {createPost} from "./controllers/posts.controller.js";
 import { verifyToken } from "./middlewares/auth.js";
 
 /* CONFIGURATIONS */
