@@ -5,6 +5,7 @@ export const createPost = async(req, res) => {
     try{
         const {userId, picturePath, description} = req.body;
         const user = await User.findById(userId);
+        const newPost = new Post({})
     }
     catch(err){
         res.status(409).json({error: err.message});
