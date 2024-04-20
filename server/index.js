@@ -8,7 +8,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import path from "path";
 import {fileURLToPath} from "url";
-import authRoutes from "./routes/auth.routes.js";
+import {authRoutes} from "./routes/auth.routes.js";
 import userRoutes from "./routes/users.routes.js";
 import postRoutes from "./routes/posts.routes.js";
 import {register} from "./controllers/auth.controllers.js";
@@ -16,7 +16,7 @@ import {createPost} from "./controllers/posts.controller.js";
 import { verifyToken } from "./middlewares/auth.js";
 import User from "./models/users.model.js";
 import Post from "./models/posts.model.js";
-import {users, posts} from "./data/index.js"
+import {users} from "./data/index.js"
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
