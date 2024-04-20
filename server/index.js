@@ -55,5 +55,8 @@ app.use('/posts', postRoutes)
 /* MONGOOSE SETUP */
 const PORT = 6001;
 mongoose.connect(process.env.MONGO_URL).then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+    User.insertMany(users);
+    Post.insertMany(posts)
 }).catch((error) => console.log(`${error} did not connect`))
