@@ -17,8 +17,20 @@ export const createPost = async(req, res) => {
         });
 
         await newPost.save();
+
+        const post = await Post.find();
+        res.status(201).json(post);
     }
     catch(err){
         res.status(409).json({error: err.message});
+    }
+};
+
+export const getFeedPosts = async(req, res) => {
+    try{
+
+    }
+    catch(err){
+        res.status(500).json({error: err.message})
     }
 }
