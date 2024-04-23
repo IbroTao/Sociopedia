@@ -8,9 +8,9 @@ import morgan from "morgan";
 import helmet from "helmet";
 import path from "path";
 import {fileURLToPath} from "url";
-import authRoutes from "./routes/auth.routes.js";
-import userRoutes from "./routes/users.routes.js";
-import postRoutes from "./routes/posts.routes.js";
+// import authRoutes from "./routes/auth.routes.js";
+// import userRoutes from "./routes/users.routes.js";
+// import postRoutes from "./routes/posts.routes.js";
 import {register} from "./controllers/auth.controllers.js";
 import {createPost} from "./controllers/posts.controller.js";
 import { verifyToken } from "./middlewares/auth.js";
@@ -48,9 +48,9 @@ app.post('/auth/register', upload.single("picture"), verifyToken, register);
 app.post('/posts', verifyToken, upload.single('picture'), createPost);
 
 /* ROUTES */
-app.use('/auth', authRoutes);
-app.use('/users', userRoutes);
-app.use('/posts', postRoutes)
+// app.use('/auth', authRoutes);
+// app.use('/users', userRoutes);
+// app.use('/posts', postRoutes)
 
 /* MONGOOSE SETUP */
 const PORT = 6001;
